@@ -338,7 +338,7 @@ This project is licensed under the **MIT License** - see the [LICENSE](https://g
 
 ## 👨‍💻 About the Author
 
-**Ankesh Kumar** - *Software Developer & Resume Optimization Enthusiast*
+**Ankesh Kumar** - *Software Developer & Tech Enthusiast*
 
 I'm passionate about creating tools that help professionals advance their careers. This resume builder was born from my own experience navigating the job market and understanding the critical importance of ATS optimization. With a background in software development and a keen eye for user experience design, I've crafted this application to bridge the gap between beautiful design and practical functionality.
 
@@ -392,8 +392,7 @@ Don't let ATS systems filter out your talents. Create a resume that showcases yo
 **[⬇️ Download Now](https://github.com/AnkeshGG/ResumePortfolioBuilder/releases)** | **[📖 Quick Start Guide](#-quick-start-guide)** | **[🤝 Contribute](#-contributing)**
 
 ---
-
-⭐ **If this project helped you land your dream job, please star this repository!** ⭐
+© 2025 Ankesh Kumar.
 
 *Your success story could inspire the next developer to build something amazing.*
 ![Built with love](https://img.shields.io/badge/Built%20with-%E2%9D%A4-red)
