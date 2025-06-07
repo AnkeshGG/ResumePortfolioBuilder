@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.resumeportfolio.MainController"
+            prefHeight="800.0" prefWidth="1200.0">
+
+    <!-- Top Header -->
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="20" style="-fx-background-color: linear-gradient(to right, #051030 0%,#0A6360 47%, #17BDBA 100%); -fx-padding: 20;">
+            <Label text="Professional Resume Builder" style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: white;"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button fx:id="themeToggleBtn" text="🌙 Dark Mode" onAction="#switchTheme"
+                    style="-fx-background-color: rgba(255,255,255,0.2); -fx-text-fill: white; -fx-border-radius: 20; -fx-background-radius: 20; -fx-padding: 8 16;"/>
+        </HBox>
+    </top>
+
+    <!-- Main Content -->
+    <center>
+        <ScrollPane fitToWidth="true" style="-fx-background-color: transparent;">
+            <VBox spacing="25" style="-fx-background-color: #caf0f8; -fx-padding: 30;">
+
+                <!-- Personal Information Section -->
+                <VBox spacing="15" styleClass="section-container">
+                    <Label text="Personal Information" styleClass="section-header"/>
+                    <GridPane hgap="20" vgap="15">
+                        <columnConstraints>
+                            <ColumnConstraints minWidth="120" prefWidth="120"/>
+                            <ColumnConstraints minWidth="250" prefWidth="250"/>
+                            <ColumnConstraints minWidth="120" prefWidth="120"/>
+                            <ColumnConstraints minWidth="250" prefWidth="250"/>
+                        </columnConstraints>
+
+                        <Label text="Full Name*" GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass="field-label"/>
+                        <TextField fx:id="nameField" promptText="Enter your full name"
+                                   GridPane.columnIndex="1" GridPane.rowIndex="0" styleClass="modern-textfield"/>
+
+                        <Label text="Email*" GridPane.columnIndex="2" GridPane.rowIndex="0" styleClass="field-label"/>
+                        <TextField fx:id="emailField" promptText="your.email@example.com"
+                                   GridPane.columnIndex="3" GridPane.rowIndex="0" styleClass="modern-textfield"/>
+
+                        <Label text="Phone Number*" GridPane.columnIndex="0" GridPane.rowIndex="1" styleClass="field-label"/>
+                        <TextField fx:id="phoneField" promptText="(XXX) XXX-XXXX"
+                                   GridPane.columnIndex="1" GridPane.rowIndex="1" styleClass="modern-textfield"/>
+
+                        <Label text="Location" GridPane.columnIndex="2" GridPane.rowIndex="1" styleClass="field-label"/>
+                        <TextField fx:id="locationField" promptText="City, State/Country"
+                                   GridPane.columnIndex="3" GridPane.rowIndex="1" styleClass="modern-textfield"/>
+
+                        <Label text="LinkedIn Profile" GridPane.columnIndex="0" GridPane.rowIndex="2" styleClass="field-label"/>
+                        <TextField fx:id="linkedInField" promptText="linkedin.com/in/yourprofile"
+                                   GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.columnSpan="3" styleClass="modern-textfield"/>
+                    </GridPane>
+                </VBox>
+
+                <!-- Professional Summary Section -->
+                <VBox spacing="15" styleClass="section-container">
+                    <Label text="Professional Summary" styleClass="section-header"/>
+                    <VBox spacing="8">
+                        <Label text="Write a compelling 2-3 sentence summary highlighting your key strengths and career objectives."
+                               styleClass="help-text"/>
+                        <TextArea fx:id="summaryArea" promptText="Experienced professional with expertise in..."
+                                  prefRowCount="4" wrapText="true" styleClass="modern-textarea"/>
+                        <Label fx:id="summaryCountLabel" text="0/300 characters" styleClass="character-count"/>
+                    </VBox>
+                </VBox>
+
+                <!-- Skills Section -->
+                <VBox spacing="15" styleClass="section-container">
+                    <!-- Note: The ampersand is escaped as &amp; -->
+                    <Label text="Core Skills &amp; Technologies" styleClass="section-header"/>
+                    <VBox spacing="8">
+                        <Label text="List your key technical and professional skills (separate with commas)"
+                               styleClass="help-text"/>
+                        <TextArea fx:id="skillsArea" promptText="Java, Python, Project Management, Data Analysis..."
+                                  prefRowCount="3" wrapText="true" styleClass="modern-textarea"/>
+                    </VBox>
+                </VBox>
+
+                <!-- Education Section -->
+                <VBox spacing="15" styleClass="section-container">
+                    <HBox alignment="CENTER_LEFT" spacing="15">
+                        <Label text="Education" styleClass="section-header"/>
+                        <Button fx:id="addEducationBtn" text="+ Add Education" onAction="#addEducation"
+                                styleClass="add-button"/>
+                    </HBox>
+                    <VBox fx:id="educationContainer" spacing="10"/>
+                </VBox>
+
+                <!-- Work Experience Section -->
+                <VBox spacing="15" styleClass="section-container">
+                    <HBox alignment="CENTER_LEFT" spacing="15">
+                        <Label text="Professional Experience" styleClass="section-header"/>
+                        <Button fx:id="addExperienceBtn" text="+ Add Experience" onAction="#addExperience"
+                                styleClass="add-button"/>
+                    </HBox>
+                    <VBox fx:id="experienceContainer" spacing="15"/>
+                </VBox>
+
+                <!-- Action Buttons -->
+                <HBox spacing="20" alignment="CENTER" style="-fx-padding: 30 0;">
+                    <Button fx:id="previewBtn" text="📄 Preview Resume" onAction="#previewResume"
+                            styleClass="primary-button"/>
+                    <Button fx:id="generateBtn" text="📥 Generate PDF" onAction="#generateResume"
+                            styleClass="success-button"/>
+                    <Button fx:id="saveTemplateBtn" text="💾 Save Template" onAction="#saveTemplate"
+                            styleClass="secondary-button"/>
+                    <Button fx:id="loadTemplateBtn" text="📂 Load Template" onAction="#loadTemplate"
+                            styleClass="secondary-button"/>
+                </HBox>
+
+            </VBox>
+        </ScrollPane>
+    </center>
+
+    <!-- Bottom Status Bar -->
+    <bottom>
+        <HBox alignment="CENTER_LEFT" spacing="15" style="-fx-background-color: #f8f9fa; -fx-padding: 10 20; -fx-border-color: #dee2e6; -fx-border-width: 1 0 0 0;">
+            <Label fx:id="statusLabel" text="Ready to build your professional resume"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label text="ATS-Optimized Resume Builder v1.0.0" style="-fx-text-fill: #6c757d; -fx-font-size: 11px;"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>
