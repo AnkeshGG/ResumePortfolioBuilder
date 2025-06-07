@@ -5,7 +5,9 @@ A powerful desktop application built with JavaFX for creating ATS-optimized resu
 [![Java](https://img.shields.io/badge/Java-21+-orange.svg)](https://www.oracle.com/java/)
 [![JavaFX](https://img.shields.io/badge/JavaFX-21-blue.svg)](https://openjfx.io/)
 [![Maven](https://img.shields.io/badge/Maven-3.6+-red.svg)](https://maven.apache.org/)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)]()
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/AnkeshGG/ResumePortfolioBuilder/blob/master/LICENSE/LICENSE.txt)
+
+![Demo](screenshots/Demo.gif)
 
 ## ✨ Why Choose This Resume Builder?
 
@@ -332,7 +334,7 @@ Visit the [Releases Page](https://github.com/AnkeshGG/ResumePortfolioBuilder/rel
 
 ## 📄 License
 
-This project is licensed under the **MIT License** - see the [LICENSE](../../../Desktop/LICENSE) file for complete details.
+This project is licensed under the **MIT License** - see the [LICENSE](https://github.com/AnkeshGG/ResumePortfolioBuilder/blob/master/LICENSE/LICENSE.txt) file for complete details.
 
 ## 👨‍💻 About the Author
 
