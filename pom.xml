@@ -66,7 +66,10 @@
     </dependencies>
 
     <build>
+        <finalName>ResumePortfolioBuilder-${project.version}</finalName>
+
         <plugins>
+
             <!-- Maven Compiler Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -77,15 +80,42 @@
                     <target>24</target>
                 </configuration>
             </plugin>
+
+            <!-- Maven Assembly Plugin for Fat JAR -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>3.6.0</version>
+                <configuration>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                    <archive>
+                        <manifest>
+                            <mainClass>com.example.resumeportfolio.Launcher</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
             <!-- Maven Jar Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
-                <version>3.2.0</version>
+                <version>3.3.0</version>
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>com.example.resumeportfolio.App</mainClass>
+                            <mainClass>com.example.resumeportfolio.Launcher</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
