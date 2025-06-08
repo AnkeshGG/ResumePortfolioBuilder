@@ -13,6 +13,7 @@ public class App extends Application {
 
     @Override
     public void start(Stage primaryStage) {
+
         try {
             // Load the FXML file from the resources
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/main.fxml"));
@@ -24,10 +25,12 @@ public class App extends Application {
             // Configure the stage
             primaryStage.setTitle("Professional Resume Builder - ATS Optimized");
             primaryStage.setScene(scene);
-            primaryStage.setMinWidth(1000);
-            primaryStage.setMinHeight(700);
+            primaryStage.setMinWidth(800);
+            primaryStage.setMinHeight(600);
+            primaryStage.setWidth(1200);
+            primaryStage.setHeight(800);
 
-            // Set application icon (if present in the resources)
+            // Set application icon 
             try {
                 Image icon = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/icons/app-icon.png")));
                 primaryStage.getIcons().add(icon);
@@ -54,10 +57,11 @@ public class App extends Application {
     }
 
     public static void main(String[] args) {
-        // Set system properties for JavaFX performance; the preloader property has been removed.
-        System.setProperty("prism.lcdtext", "false");
+        // Set system properties for JavaFX performance
         System.setProperty("prism.text", "t2k");
         System.setProperty("glass.win.uiScale", "1.0");
+        System.setProperty("glass.gtk.uiScale", "2");
+        System.setProperty("prism.allowhidpi", "true");
         launch(args);
     }
 }
