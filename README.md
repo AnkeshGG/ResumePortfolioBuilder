@@ -164,6 +164,7 @@ mvn clean package
 ResumePortfolioBuilder/
 ├── src/main/java/com/example/resumeportfolio/
 │   ├── App.java                    # Application entry point
+│   ├── Launcher.java               # Launcher class for JavaFX
 │   ├── Resume.java                 # Core resume data model
 │   ├── ResumeGenerator.java        # PDF export functionality
 │   ├── ThemeManager.java           # Light/Dark theme management
