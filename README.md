@@ -239,7 +239,7 @@ mvn site
 ### Testing Best Practices Implemented
 - ✅ **Unit Testing** - Core `Resume` class functionality thoroughly tested
 - ✅ **Test-Driven Development** - Tests guide feature implementation
-- ✅ **Automated Testing** - Integration with Maven build lifecycle
+- ✅ **Automated Testing** - Integration with Maven build lifecycle 
 - ✅ **Continuous Integration Ready** - Easy integration with CI/CD pipelines
 
 ## 🤝 Contributing
