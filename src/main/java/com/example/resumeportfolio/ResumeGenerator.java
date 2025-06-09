@@ -5,7 +5,9 @@ import com.lowagie.text.Font;
 import com.lowagie.text.pdf.PdfWriter;
 import com.lowagie.text.pdf.draw.LineSeparator;
 
+import javax.swing.*;
 import java.awt.*;
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.List;
@@ -29,32 +31,41 @@ public class ResumeGenerator {
     private static final int CONTENT_SIZE = 11;
     private static final int SMALL_SIZE = 10;
 
+
     public static void generatePDF(Resume resume) throws DocumentException, IOException {
+        // Open file chooser for user to select save location
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setDialogTitle("Save Resume As PDF");
+        fileChooser.setSelectedFile(new File("Resume_" + (resume.getName() != null ?
+                resume.getName().replaceAll("[^a-zA-Z0-9]", "_") : "Generated") + ".pdf"));
+
+        int userSelection = fileChooser.showSaveDialog(null);
+
+        if (userSelection != JFileChooser.APPROVE_OPTION) {
+            System.out.println("Resume PDF generation cancelled.");
+            return; // Exit if the user cancels file selection
+        }
+
+        File selectedFile = fileChooser.getSelectedFile();
+        String filePath = selectedFile.getAbsolutePath();
+
         // Create document with standard page size for ATS compatibility
         Document document = new Document(PageSize.LETTER, 50, 50, 50, 50);
-
-        String fileName = "Resume_" + (resume.getName() != null ?
-                resume.getName().replaceAll("[^a-zA-Z0-9]", "_") : "Generated") + ".pdf";
-
-        PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream(fileName));
+        PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream(filePath));
         document.open();
 
         try {
-            // Add document metadata for better ATS parsing
             addDocumentMetadata(document, resume);
-
-            // Generate resume content
             addHeader(document, resume);
             addProfessionalSummary(document, resume);
             addCoreSkills(document, resume);
             addProfessionalExperience(document, resume);
             addEducation(document, resume);
-
         } finally {
             document.close();
         }
 
-        System.out.println("ATS-optimized resume generated: " + fileName);
+        System.out.println("ATS-optimized resume generated and saved to: " + filePath);
     }
 
     private static void addDocumentMetadata(Document document, Resume resume) {
