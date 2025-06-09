@@ -395,5 +395,4 @@ Don't let ATS systems filter out your talents. Create a resume that showcases yo
 ---
 © 2025 Ankesh Kumar.
 
-*Your success story could inspire the next developer to build something amazing.*
 ![Built with love](https://img.shields.io/badge/Built%20with-%E2%9D%A4-red)
