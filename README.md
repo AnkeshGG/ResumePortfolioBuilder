@@ -345,8 +345,7 @@ I'm passionate about creating tools that help professionals advance their career
 
 ### Connect With Me
 - 🌐 **GitHub**: [@AnkeshGG](https://github.com/AnkeshGG)
-- 💼 **LinkedIn**: [Ankesh Kumar](https://www.linkedin.com/in/ankesh-kumar-38363a287/)
-- 📧 **Email**: [ankeshkumar.dev@gmail.com](mailto:ankeshkumar.dev@gmail.com)
+- 💼 **LinkedIn**: [Ankesh Kumar](https://www.linkedin.com/in/ankeshgg/)
 - 🔗 **Medium**: [ankeshGG](https://medium.com/@ankeshGG)
 
 
