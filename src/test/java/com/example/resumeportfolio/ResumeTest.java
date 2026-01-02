@@ -8,7 +8,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Test class for the Resume model.
- * This sample test uses an Indian name ("Rajesh Kumar") and sample work and education entries.
  */
 public class ResumeTest {
 
